@@ -13,11 +13,15 @@ spec:
       - name: BP_JVM_VERSION
         value: "17"
   params:
+  - name: testing_pipeline_matching_labels
+    value:
+      apps.tanzu.vmware.com/pipeline: test
+      apps.tanzu.vmware.com/language: java-maven
   - name: annotations
     value:
       autoscaling.knative.dev/minScale: "1"
   source:
     git:
-      url: <https URL for your generated project's Git repository>
+      url: https://github.com/jimbasler-pivotal/tanzu-java-web-app1
       ref:
         branch: main
